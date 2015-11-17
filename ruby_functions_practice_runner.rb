@@ -107,8 +107,7 @@ puts "If you were born on 08/12/1993 you are #{second_age} years old."
 puts "If you were born on 08/12/1993 you are #{third_age} years old."
 
 #### Create a command line interface using put, gets to interact with the your functions 
-
-
+get_user_input()
 
 
 
