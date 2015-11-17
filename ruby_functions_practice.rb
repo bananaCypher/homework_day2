@@ -80,9 +80,8 @@ def get_cone_volume(r, h)
 end
 
 def get_cap_volume(r, h)
-  r = r.to_f
-  h = h.to_f
-  return (Math::PI * (r**2) * (h - 2 * r)) + (4/3 * Math::PI * (r**3))
+  cyl_volume = Math::PI * (r.to_f**2) * h.to_f
+  return cyl_volume + get_sphere_volume(r)
 end
 
 def seconds_to_days(i)
@@ -91,25 +90,27 @@ def seconds_to_days(i)
   days = hours / 24
   return days.to_i
 end
+
 def days_till_christmas(date)
   christmas = Time.new(2015, 12, 25)
   return seconds_to_days(christmas - date)
 end
 
 def get_age(date)
+  # split the date at /
   date_a = date.split('/')
+  # assign the split date to variables
   day = date_a[0].to_i
   month = date_a[1].to_i
   year = date_a[2].to_i
 
   today = Time.now
-  date = Time.new(month, day, today.year)
+  # get the given date but this year
+  date = Time.new(today.year, month, day)
 
+  # if date has passed
   if date < today
     return today.year - year
-  else
-    return today.year - year - 1
   end
-
-  
+  return today.year - year - 1
 end

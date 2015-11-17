@@ -99,9 +99,12 @@ puts "The volume of capsule with radius 5 and height 3 is #{third_cap}"
 puts "There are #{days_till_christmas(Time.now)} days till Christmas."
 
 ####Given a date of birth, calculate how old a person born on that date would be
-date_of_birth = '8/12/1993'
-puts "You are #{get_age(date_of_birth)} years old."
-
+first_age = get_age('08/12/1993')
+second_age = get_age('15/11/1993')
+third_age = get_age('17/11/2015')
+puts "If you were born on 08/12/1993 you are #{first_age} years old."
+puts "If you were born on 08/12/1993 you are #{second_age} years old."
+puts "If you were born on 08/12/1993 you are #{third_age} years old."
 
 #### Create a command line interface using put, gets to interact with the your functions 
 
